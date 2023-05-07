@@ -10,4 +10,4 @@
 
 // When in Visual Studio code, copy and paste the file ``index.js`` from here into folder. You will then need to enter in your application ID which can be found in the      Discord Dev portal on the application. copy and paste that into the first line in the ``index.js`` where it asks for your ID.
 
-// Follow the rest of the steps on the `index.js`` file and when done, run the code by typing in ``node.`` in the terminal. it should then display the RPC on your          profile.
+// Follow the rest of the steps on the ``index.js`` file and when done, run the code by typing in ``node.`` in the terminal. it should then display the RPC on your          profile.

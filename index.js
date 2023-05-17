@@ -1,5 +1,5 @@
 // APPLICATION ID IS THE ID FOR THIS. TO GET THIS, GO TO THE DISCORD DEV PORTAL AND CREATE A NEW APPLICATION AND COPY THE APPLICATION ID
-const ID = '1104782341504778350';
+const ID = 'APPLICATION ID';
 // 'NPM I discord-rpc' IN THE TERMINAL
 const DiscordRPC = require('discord-rpc');
 const RPC = new DiscordRPC.Client({ transport: 'ipc'});

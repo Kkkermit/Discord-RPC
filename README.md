@@ -1,4 +1,4 @@
-# Discord-PRC
+# Discord-RPC
 
 // **How to use the Discord-rpc** //
 

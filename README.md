@@ -1,13 +1,29 @@
-# Discord-RPC
+# 🎮 Discord-RPC Guide 🚀
 
-// **How to use the Discord-rpc** //
+Welcome to the **Discord-RPC** guide! This document will walk you through the process of setting up your own Discord Rich Presence. Let's get started! 🎉
 
-// To begin create a new application in the Discord Dev portal. You don't have to do anything else there apart from changing the name of the application. 
+## Step 1: Create a New Application 📝
 
-// Create a new folder on your desktop. 
+Start by creating a new application in the [Discord Developer Portal](https://discord.com/developers/applications). You can name the application anything you like however, what ever you name it, this will become the name of the RPC. Remember to note down the application ID, you'll need it later!
 
-// Type in cmd at the top of the folder path. When in the cmd, type ``npm init`` and then click through everything it asks you. when presented with the word ``yes`` at      the end of clicking through, type ``yes``. After that type ``code.`` in the cmd to open up Visual Studio Code. You will need Visual Studio code installed to do this.    If you don't have it installed, install it.
+## Step 2: Set Up Your Workspace 🗂️
 
-// When in Visual Studio code, copy and paste the file ``index.js`` from here into folder. You will then need to enter in your application ID which can be found in the      Discord Dev portal on the application. copy and paste that into the first line in the ``index.js`` where it asks for your ID.
+Next, create a new folder on your desktop. This will be your workspace for setting up Discord-RPC.
 
-// Follow the rest of the steps on the ``index.js`` file and when done, run the code by typing in ``node.`` in the terminal. it should then display the RPC on your          profile.
+## Step 3: Initialize Your Project 🚀
+
+Open the Command Prompt (cmd) in your new folder (you can do this by typing `cmd` in the folder path at the top). Once the Command Prompt is open, type `npm init` and follow the prompts. When asked to confirm, type `yes`. Alternatively you can also do this in your editor terminal as well.
+
+## Step 4: Open Your Project in VS Code 📚
+
+After initializing your project, type `code .` in the Command Prompt to open your project in Visual Studio Code. If you don't have Visual Studio Code installed, you can download it [here](https://code.visualstudio.com/download).
+
+## Step 5: Set Up Your `index.js` File 📄
+
+In Visual Studio Code, copy and paste the `index.js` file from this repository into your project folder. Replace the placeholder application ID with your actual application ID from the Discord Developer Portal. Fill in the rest of the sections on the `RPC.setActivity` as well.
+
+## Step 6: Run Your Code 🏃‍♂️
+
+Finally, run your code by typing `node .` in the terminal. If everything is set up correctly, your Discord profile should now display your custom Rich Presence!
+
+That's it! You've successfully set up your own Discord-RPC. Enjoy! 🎉

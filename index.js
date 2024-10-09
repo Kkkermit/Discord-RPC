@@ -1,49 +1,66 @@
-// APPLICATION ID IS THE ID FOR THIS. TO GET THIS, GO TO THE DISCORD DEV PORTAL AND CREATE A NEW APPLICATION AND COPY THE APPLICATION ID
-const ID = 'APPLICATION ID';
-// 'NPM I discord-rpc' IN THE TERMINAL
-const DiscordRPC = require('discord-rpc');
-const RPC = new DiscordRPC.Client({ transport: 'ipc'});
+require("dotenv").config();
+const RPC = require("discord-rpc");
 
-DiscordRPC.register(ID);
+const { color, getTimestamp } = require("./utils/loggingEffects");
+const { asciiText } = require("./utils/asciiText");
 
-async function activity() {
-    if (!RPC) return;
+const appId = process.env.appid;
 
-    // DETAILS FOR THE DISCORD RICH PRESENCE
-    RPC.setActivity({
-        details: ' RPC DETAILS ',
-        state: ' RPC STATE ', 
-        largeImageKey: ' ENTER AN IMAGE YOU WANT TO USE ',
-        largeImageText: ' ALT TEXT FOR THE IMAGE ',
-        smallImageKey: ' ENTER AN IMAGE YOU WANT TO USE ',
-        smallImageText: 'ALT TEXT FOR THE IMAGE',
-        instance: false,
-        startTimestamp: Date.now(),
-        // YOU CAN ONLY HAVE 2 BUTTONS, THEY APPEAR ON THE BOTTOM OF THE RPC"
-        buttons: [
-            {
-                label: ` ENTER WHAT YOU WANT TO APPEAR ON YOUR BUTTON `,
-                url: ` ENTER URL `
-            },
-            {
-                label: ` ENTER WHAT YOU WANT TO APPEAR ON YOUR BUTTON `,
-                url: ` URL `
-            }
-        ]
+const client = new RPC.Client({ transport: "ipc" });
 
-
-    })
+if (!appId) {
+	console.log(
+		`${
+			color.red
+		}[${getTimestamp()}] [ERROR] You need to provide an application ID in the .env file \n[${getTimestamp()}] [ERROR] Exiting... ${
+			color.reset
+		}`,
+	);
+	process.exit(1);
 }
 
-// NODE. IN TERMINAL TO RUN THE CODE AND BRING THE RPC UP ONTO YOUR PROFILE
-RPC.on('ready', async () => {
-    console.log("RPC Presence up");
-    activity();
+RPC.register(appId);
 
-    setInterval(() => {
-        activity();
+console.log(`${color.yellow}[${getTimestamp()}] [INFO] Launching RPC... ${color.reset}`);
 
-    }, 100000000)
-})
+async function activity() {
+	if (!client) return;
 
-RPC.login({ clientId: ID });
+	// DETAILS FOR THE DISCORD RICH PRESENCE
+	client.setActivity({
+		details: "Something cool I guess",
+		state: "Something even cooler",
+		largeImageKey: `https://cdn.buymeacoffee.com/uploads/profile_pictures/2024/09/SKCylmrnc4wdho5C.jpeg@300w_0e.webp`,
+		largeImageText: "This is a large image, wow!",
+		smallImageKey: "https://cdn.buymeacoffee.com/uploads/profile_pictures/2024/09/SKCylmrnc4wdho5C.jpeg@300w_0e.webp",
+		smallImageText: "This is a small image, wow!",
+		instance: false,
+		startTimestamp: Date.now(),
+	});
+}
+
+try {
+    console.log(`${color.yellow}[${getTimestamp()}] [INFO] Setting RPC activity... ${color.reset}`);
+	client.on("ready", async () => {
+        asciiText()
+		console.log(
+			`${color.green}[${getTimestamp()}] [SUCCESS] RPC has launched successfully for: ${client.user.username}! ${
+				color.reset
+			}`,
+		);
+		activity();
+        console.log(`${color.green}[${getTimestamp()}] [SUCCESS] ${client.user.username}'s activity has been set successfully ${color.reset}`);
+
+		setInterval(() => {
+			activity();
+		}, 100000000);
+	});
+} catch (error) {
+	console.log(
+		`${color.red}[${getTimestamp()}] [ERROR] There has been an error launching the RPC \n[${getTimestamp()}] [ERROR]`,
+		error,
+		`${color.reset}`,
+	);
+}
+
+client.login({ clientId: appId });

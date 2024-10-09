@@ -26,6 +26,9 @@ With this repo, you can set your very own discord rich prepense to set your acco
 ⭐ If your a fan of this repository or have used it or any of it's code, please consider leaving us a star. It would be greatly appreciated and allows us to see if users value the bot! ⭐
 </strong></h1>
 
+<p align="center">This is an example of how it looks and the end result.</p>
+<img align="center" alt="discord-rpc-banner" src="https://i.postimg.cc/wjg0PqpW/Screenshot-2024-10-09-113745.png">
+
 ## Installation
 - Download [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 - Download [Visual Studio Code](https://code.visualstudio.com/download).

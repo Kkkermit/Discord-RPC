@@ -65,6 +65,11 @@ With this repo, you can set your very own discord rich prepense to set your acco
     5. Running this command will bring up your terminal and should display some logs telling you that the RPC has been launched!
     6. That's it, thats all you need to do to get your RPC on your profile!
 
+
+- **Discord-RPC Docs and Repo**
+
+    1. You can find the docs and repository for the discord-rpc package [here](https://github.com/discordjs/RPC?tab=readme-ov-file)
+
 ## Support
 Connect with us on [Discord](https://discord.gg/xcMVwAVjSD) for support / any related inquiry.
 
